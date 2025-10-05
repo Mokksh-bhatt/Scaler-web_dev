@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dog Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .dog-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dog-card {
+            overflow: hidden;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dog-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        }
+        
+        .dog-card:hover img {
+            border: 2px solid black;
+        }
+
+        .dog-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid transparent; 
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Dog Gallery</h1>
+
+    <div class="dog-gallery">
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=1" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=2" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=3" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=4" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=5" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=6" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=7" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=8" alt="A cute dog">
+        </div>
+        <div class="dog-card">
+            <img src="https://placedog.net/400/400?random=9" alt="A cute dog">
+        </div>
+    </div>
+
+</body>
+</html>
+
