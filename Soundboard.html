@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #282c34;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .sound-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 25px 50px;
+            font-size: 1.2rem;
+            background-color: #61dafb;
+            color: #20232a;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.1s ease, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #4fa8c7;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .controls {
+            background-color: #20232a;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        input[type="range"] {
+            cursor: pointer;
+        }
+        #muteBtn {
+            padding: 10px 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+         }
+
+        #muteBtn.active {
+            background-color: #27ae60; 
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sound-board">
+        <button class="btn" onclick="play('dog')">🐶 Dog</button>
+        <button class="btn" onclick="play('clap')">👏 Clap</button>
+        <button class="btn" onclick="play('pop')">🎈 Pop</button>
+        <button class="btn" onclick="play('boing')">😂 Boing</button>
+    </div>
+
+    <div class="controls">
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+        
+        <button id="muteBtn" class="active" onclick="toggleMute()">🔊 Mute</button>
+    </div>
+
+    <script>
+        
+        const soundLibrary = {
+            'dog': 'https://actions.google.com/sounds/v1/animals/dog_bark_close.ogg',
+            'clap': 'https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg',
+            'pop': 'https://actions.google.com/sounds/v1/cartoon/pop.ogg',
+            'boing': 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg'
+        };
+
+        const volumeSlider = document.getElementById('volume');
+        const muteBtn = document.getElementById('muteBtn');
+        
+        let isMuted = false;
+
+        function play(key) {
+            if (isMuted) return;
+
+            const audio = new Audio(soundLibrary[key]);
+            audio.volume = volumeSlider.value;
+            audio.play();
+        }
+
+        function toggleMute() {
+            isMuted = !isMuted;
+
+            if (isMuted) {
+                muteBtn.textContent = "🔇";
+                muteBtn.classList.remove('active');
+                muteBtn.style.backgroundColor = '#7f8c8d';
+            } else {
+                muteBtn.textContent = "🔊";
+                muteBtn.classList.add('active');
+                muteBtn.style.backgroundColor = '#e74c3c'; 
+            }
+        }
+    </script>
+
+</body>
+</html>
