@@ -1,0 +1,66 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #e2e8f0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  background: #ffffff;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #1e293b;
+}
+
+.author-text {
+  font-weight: bold;
+  color: #475569;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.liked-section {
+  text-align: left;
+}
+
+.liked-list {
+  list-style: none;
+  padding: 0;
+}
+
+.liked-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
